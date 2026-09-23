@@ -1,4 +1,379 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS 027</title><link rel="stylesheet" href="assets/style.css"><style></style><style id="page-css-027">
-/* Page-specific CSS: self-contained styling for this practical. */
-:root{--bg:#0b1020;--panel:#11182b;--panel2:#17213a;--text:#eef2ff;--muted:#a8b3cf;--accent:#7c5cff;--accent2:#22d3ee;--ok:#34d399;--danger:#fb7185;--border:#2a3655}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#080c18,#101a31);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}.top{position:sticky;top:0;z-index:10;background:rgba(8,12,24,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center}.main{max-width:1100px;margin:auto;padding:34px 22px 70px}.hero{padding:28px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(145deg,rgba(124,92,255,.16),rgba(34,211,238,.06));box-shadow:0 18px 45px rgba(0,0,0,.22)}.hero h1{margin:12px 0 8px;font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.15}.hero p{color:var(--muted);margin:0}.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);font-size:.78rem;font-weight:700;letter-spacing:.08em}.demo{margin-top:24px}.demo h2{margin:0 0 14px}.card{background:rgba(17,24,43,.9);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.progress{height:10px;background:#26314d;border-radius:99px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.btn{display:inline-block;border:0;border-radius:10px;padding:10px 16px;background:var(--accent);color:white;font-weight:700}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:#0e1528;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(34,211,238,.12)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:5px 10px;border-radius:999px;background:#202b47;border:1px solid var(--border)}.alert{padding:14px 16px;border-radius:12px;border:1px solid rgba(251,113,133,.4);background:rgba(251,113,133,.1)}.success{padding:14px 16px;border-radius:12px;border:1px solid rgba(52,211,153,.4);background:rgba(52,211,153,.1)}.muted{color:var(--muted)}.center{text-align:center}.pill{display:inline-flex;align-items:center;padding:7px 12px;border-radius:999px;background:#202b47}.shadow{box-shadow:0 20px 50px rgba(0,0,0,.28)}.rounded{border-radius:20px}.avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:800}.row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.stack{display:grid;gap:12px}@media(max-width:650px){.nav{align-items:flex-start;flex-direction:column}.main{padding:22px 14px 50px}.hero,.card{padding:17px}}
-</style></head><body><header class="top"><div class="nav"><b>CSS Practical #027</b><span><a href="index.html">CSS Programs</a> <a href="../index.html">Home</a></span></div></header><main class="main"><section class="hero"><span class="badge">PROGRAM 027</span><h1>Create a webpage using CSS width and height percentages, viewport units, and rem units.</h1><p>Corrected implementation and visible output.</p></section><section class="demo"><h2>Output</h2><div class="grid"><div class="card"><h2>Practical Demonstration</h2><p>Create a webpage using CSS width and height percentages, viewport units, and rem units.</p><button class="btn">Interact</button></div><div class="card"><h3>Output</h3><p>The requested CSS concept is demonstrated above.</p></div></div></section></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Width and Height Units</title>
+
+    <style>
+        :root{
+            --bg:#0b1020;
+            --panel:#11182b;
+            --text:#eef2ff;
+            --muted:#a8b3cf;
+            --accent:#7c5cff;
+            --accent2:#22d3ee;
+            --ok:#34d399;
+            --border:#2a3655;
+        }
+
+        *{
+            box-sizing:border-box;
+        }
+
+        body{
+            margin:0;
+            background:linear-gradient(135deg,#080c18,#101a31);
+            color:var(--text);
+            font-family:Inter,Segoe UI,Arial,sans-serif;
+            line-height:1.6;
+        }
+
+        a{
+            color:var(--accent2);
+            text-decoration:none;
+        }
+
+        a:hover{
+            text-decoration:underline;
+        }
+
+        /* Navigation */
+        .top{
+            position:sticky;
+            top:0;
+            z-index:10;
+            background:rgba(8,12,24,.92);
+            backdrop-filter:blur(10px);
+            border-bottom:1px solid var(--border);
+        }
+
+        .nav{
+            max-width:1100px;
+            margin:auto;
+            padding:16px 22px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .nav-title{
+            font-weight:800;
+            color:white;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:18px;
+        }
+
+        /* Main */
+        .main{
+            max-width:1100px;
+            margin:auto;
+            padding:34px 22px 70px;
+        }
+
+        /* Hero */
+        .hero{
+            padding:28px;
+            border:1px solid var(--border);
+            border-radius:22px;
+            background:linear-gradient(
+                145deg,
+                rgba(124,92,255,.16),
+                rgba(34,211,238,.06)
+            );
+            box-shadow:0 18px 45px rgba(0,0,0,.22);
+        }
+
+        .badge{
+            display:inline-block;
+            padding:5px 10px;
+            border-radius:999px;
+            background:rgba(124,92,255,.18);
+            border:1px solid rgba(124,92,255,.45);
+            font-size:.78rem;
+            font-weight:700;
+            letter-spacing:.08em;
+        }
+
+        .hero h1{
+            margin:12px 0 8px;
+            font-size:clamp(1.5rem,3vw,2.5rem);
+        }
+
+        .hero p{
+            color:var(--muted);
+            margin:0;
+        }
+
+        /* Demo */
+        .demo{
+            margin-top:24px;
+        }
+
+        .card{
+            background:rgba(17,24,43,.9);
+            border:1px solid var(--border);
+            border-radius:18px;
+            padding:22px;
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+
+        .card h2{
+            color:var(--accent2);
+            margin-top:0;
+        }
+
+        .units-area{
+            background:#0e1528;
+            border:1px solid var(--border);
+            border-radius:16px;
+            padding:20px;
+            overflow:hidden;
+        }
+
+        /* Common Box */
+        .box{
+            margin:20px 0;
+            padding:16px;
+            min-height:70px;
+            border-radius:14px;
+            display:flex;
+            align-items:center;
+            font-weight:700;
+            box-shadow:0 8px 22px rgba(0,0,0,.2);
+        }
+
+        /* 300px Width */
+        .pixel{
+            width:300px;
+            height:100px;
+            background:linear-gradient(
+                135deg,
+                #7c5cff,
+                #22d3ee
+            );
+        }
+
+        /* 70% Width */
+        .percentage{
+            width:70%;
+            height:100px;
+            background:linear-gradient(
+                135deg,
+                #8b5cf6,
+                #ec4899
+            );
+        }
+
+        /* 50vw Width */
+        .viewport-width{
+            width:50vw;
+            height:100px;
+            background:linear-gradient(
+                135deg,
+                #06b6d4,
+                #2563eb
+            );
+        }
+
+        /* 20vh Height */
+        .viewport-height{
+            width:300px;
+            height:20vh;
+            background:linear-gradient(
+                135deg,
+                #f97316,
+                #ef4444
+            );
+        }
+
+        /* Auto */
+        .auto-box{
+            width:auto;
+            height:auto;
+            background:linear-gradient(
+                135deg,
+                rgba(52,211,153,.35),
+                rgba(34,211,238,.15)
+            );
+            border:2px solid var(--ok);
+        }
+
+        /* Labels */
+        .unit{
+            margin-left:auto;
+            padding:5px 10px;
+            border-radius:999px;
+            background:rgba(0,0,0,.25);
+            border:1px solid rgba(255,255,255,.15);
+            font-size:.8rem;
+            white-space:nowrap;
+        }
+
+        /* Info */
+        .info{
+            margin-top:22px;
+            padding:18px;
+            border-radius:14px;
+            border:1px solid var(--border);
+            background:#0e1528;
+        }
+
+        .info strong{
+            color:var(--accent2);
+        }
+
+        .label{
+            display:inline-block;
+            margin-bottom:8px;
+            padding:5px 10px;
+            border-radius:999px;
+            background:rgba(124,92,255,.15);
+            color:#cfc7ff;
+            font-size:.8rem;
+            font-weight:700;
+        }
+
+        @media(max-width:650px){
+
+            .nav{
+                align-items:flex-start;
+                flex-direction:column;
+            }
+
+            .nav-links{
+                flex-wrap:wrap;
+            }
+
+            .main{
+                padding:22px 14px 50px;
+            }
+
+            .hero,
+            .card{
+                padding:17px;
+            }
+
+            .pixel,
+            .viewport-height{
+                width:100%;
+            }
+
+            .viewport-width{
+                width:100%;
+            }
+
+            .unit{
+                font-size:.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="top">
+        <div class="nav">
+            <div class="nav-title">CSS Practical</div>
+
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="index.html">CSS Programs</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="main">
+
+        <!-- Hero -->
+        <section class="hero">
+            <span class="badge">CSS WIDTH & HEIGHT</span>
+
+            <h1>CSS Width and Height Units</h1>
+
+            <p>
+                Demonstration of fixed, percentage, viewport,
+                and automatic width and height units.
+            </p>
+        </section>
+
+        <!-- Demo -->
+        <section class="demo">
+
+            <div class="card">
+
+                <span class="label">Unit Examples</span>
+
+                <h2>Width and Height Units</h2>
+
+                <div class="units-area">
+
+                    <div class="box pixel">
+                        Width: 300px | Height: 100px
+                        <span class="unit">px</span>
+                    </div>
+
+                    <div class="box percentage">
+                        Width: 70%
+                        <span class="unit">%</span>
+                    </div>
+
+                    <div class="box viewport-width">
+                        Width: 50vw
+                        <span class="unit">vw</span>
+                    </div>
+
+                    <div class="box viewport-height">
+                        Height: 20vh
+                        <span class="unit">vh</span>
+                    </div>
+
+                    <div class="box auto-box">
+                        Width and Height: Auto
+                        <span class="unit">auto</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Explanation -->
+        <div class="info">
+
+            <strong>How it works:</strong>
+
+            <p>
+                <b>px</b> — fixed pixel size.
+            </p>
+
+            <p>
+                <b>%</b> — size relative to the parent element.
+            </p>
+
+            <p>
+                <b>vw</b> — viewport width. <b>50vw</b> means
+                50% of the browser window width.
+            </p>
+
+            <p>
+                <b>vh</b> — viewport height. <b>20vh</b> means
+                20% of the browser window height.
+            </p>
+
+            <p>
+                <b>auto</b> — allows the browser to calculate
+                the size automatically.
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
