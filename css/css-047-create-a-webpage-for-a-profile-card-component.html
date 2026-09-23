@@ -1,4 +1,499 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS 047</title><link rel="stylesheet" href="assets/style.css"><style></style><style id="page-css-047">
-/* Page-specific CSS: self-contained styling for this practical. */
-:root{--bg:#0b1020;--panel:#11182b;--panel2:#17213a;--text:#eef2ff;--muted:#a8b3cf;--accent:#7c5cff;--accent2:#22d3ee;--ok:#34d399;--danger:#fb7185;--border:#2a3655}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#080c18,#101a31);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}.top{position:sticky;top:0;z-index:10;background:rgba(8,12,24,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center}.main{max-width:1100px;margin:auto;padding:34px 22px 70px}.hero{padding:28px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(145deg,rgba(124,92,255,.16),rgba(34,211,238,.06));box-shadow:0 18px 45px rgba(0,0,0,.22)}.hero h1{margin:12px 0 8px;font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.15}.hero p{color:var(--muted);margin:0}.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);font-size:.78rem;font-weight:700;letter-spacing:.08em}.demo{margin-top:24px}.demo h2{margin:0 0 14px}.card{background:rgba(17,24,43,.9);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.progress{height:10px;background:#26314d;border-radius:99px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.btn{display:inline-block;border:0;border-radius:10px;padding:10px 16px;background:var(--accent);color:white;font-weight:700}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:#0e1528;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(34,211,238,.12)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:5px 10px;border-radius:999px;background:#202b47;border:1px solid var(--border)}.alert{padding:14px 16px;border-radius:12px;border:1px solid rgba(251,113,133,.4);background:rgba(251,113,133,.1)}.success{padding:14px 16px;border-radius:12px;border:1px solid rgba(52,211,153,.4);background:rgba(52,211,153,.1)}.muted{color:var(--muted)}.center{text-align:center}.pill{display:inline-flex;align-items:center;padding:7px 12px;border-radius:999px;background:#202b47}.shadow{box-shadow:0 20px 50px rgba(0,0,0,.28)}.rounded{border-radius:20px}.avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:800}.row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.stack{display:grid;gap:12px}@media(max-width:650px){.nav{align-items:flex-start;flex-direction:column}.main{padding:22px 14px 50px}.hero,.card{padding:17px}}
-.card{transition:transform .2s ease,box-shadow .2s ease}.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.3)}</style></head><body><header class="top"><div class="nav"><b>CSS Practical #047</b><span><a href="index.html">CSS Programs</a> <a href="../index.html">Home</a></span></div></header><main class="main"><section class="hero"><span class="badge">PROGRAM 047</span><h1>Create a webpage for a profile card component.</h1><p>Corrected implementation and visible output.</p></section><section class="demo"><h2>Output</h2><div class="card"><span class="pill">Featured</span><h2>CloudFlow</h2><p>Modern reusable SaaS card component.</p><button class="btn">View</button></div></section></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Program 47 - Profile Card Component</title>
+
+    <style>
+        :root{
+            --bg:#0b1020;
+            --panel:#11182b;
+            --text:#eef2ff;
+            --muted:#a8b3cf;
+            --accent:#7c5cff;
+            --accent2:#22d3ee;
+            --border:#2a3655;
+        }
+
+        *{
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            margin:0;
+            font-family:Inter,Segoe UI,Arial,sans-serif;
+            background:linear-gradient(135deg,#080c18,#101a31);
+            color:var(--text);
+            line-height:1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar{
+            position:sticky;
+            top:0;
+            z-index:100;
+
+            background:rgba(8,12,24,.94);
+            backdrop-filter:blur(12px);
+
+            padding:16px 35px;
+
+            border-bottom:1px solid var(--border);
+
+            box-shadow:0 8px 30px rgba(0,0,0,.25);
+        }
+
+        .logo{
+            font-size:25px;
+            font-weight:800;
+
+            background:linear-gradient(
+                90deg,
+                var(--accent),
+                var(--accent2)
+            );
+
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        /* ================= CONTAINER ================= */
+
+        .container{
+            max-width:1000px;
+
+            margin:50px auto;
+
+            padding:20px;
+        }
+
+        .container h1{
+            text-align:center;
+
+            font-size:clamp(2rem,5vw,3rem);
+
+            margin-bottom:10px;
+
+            background:linear-gradient(
+                90deg,
+                #ffffff,
+                #b9c7ff,
+                var(--accent2)
+            );
+
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .container > p{
+            text-align:center;
+
+            color:var(--muted);
+
+            margin-bottom:40px;
+        }
+
+        /* ================= PROFILE CARD ================= */
+
+        .profile-card{
+            max-width:400px;
+
+            margin:auto;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(17,24,43,.98),
+                    rgba(14,21,40,.98)
+                );
+
+            border:1px solid var(--border);
+
+            border-radius:20px;
+
+            overflow:hidden;
+
+            text-align:center;
+
+            box-shadow:0 18px 45px rgba(0,0,0,.3);
+
+            transition:
+                transform .3s,
+                box-shadow .3s,
+                border-color .3s;
+        }
+
+        .profile-card:hover{
+            transform:translateY(-8px);
+
+            border-color:rgba(124,92,255,.6);
+
+            box-shadow:
+                0 25px 55px rgba(0,0,0,.4),
+                0 0 30px rgba(124,92,255,.08);
+        }
+
+        /* ================= COVER ================= */
+
+        .cover{
+            height:130px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(34,211,238,.5),
+                    transparent 40%
+                ),
+                linear-gradient(
+                    135deg,
+                    #5b3fd1,
+                    #7c5cff,
+                    #159bb5
+                );
+        }
+
+        /* ================= PROFILE IMAGE ================= */
+
+        .profile-image{
+            width:115px;
+            height:115px;
+
+            margin:-57px auto 15px;
+
+            border-radius:50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--accent),
+                    var(--accent2)
+                );
+
+            color:white;
+
+            border:6px solid var(--panel);
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:42px;
+            font-weight:800;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,.35),
+                0 0 0 3px rgba(124,92,255,.2);
+        }
+
+        /* ================= PROFILE DETAILS ================= */
+
+        .profile-card h2{
+            margin:5px 0;
+
+            color:var(--text);
+
+            font-size:24px;
+        }
+
+        .role{
+            color:var(--accent2);
+
+            font-weight:700;
+
+            margin:8px 0;
+        }
+
+        .description{
+            color:var(--muted);
+
+            line-height:1.6;
+
+            padding:0 30px;
+
+            font-size:14px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills{
+            display:flex;
+
+            justify-content:center;
+
+            gap:8px;
+
+            flex-wrap:wrap;
+
+            padding:15px 25px;
+        }
+
+        .skill{
+            background:rgba(124,92,255,.14);
+
+            color:#cfc7ff;
+
+            border:1px solid rgba(124,92,255,.35);
+
+            padding:7px 12px;
+
+            border-radius:20px;
+
+            font-size:13px;
+
+            transition:.3s;
+        }
+
+        .skill:hover{
+            background:rgba(34,211,238,.12);
+
+            border-color:rgba(34,211,238,.45);
+
+            color:var(--accent2);
+
+            transform:translateY(-2px);
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .buttons{
+            display:flex;
+
+            gap:10px;
+
+            justify-content:center;
+
+            padding:20px 25px 30px;
+        }
+
+        .button{
+            padding:10px 20px;
+
+            border-radius:9px;
+
+            text-decoration:none;
+
+            font-size:14px;
+
+            font-weight:700;
+
+            transition:.3s;
+        }
+
+        .primary{
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--accent),
+                    #5f8cff
+                );
+
+            color:white;
+
+            box-shadow:
+                0 8px 20px rgba(124,92,255,.25);
+        }
+
+        .primary:hover{
+            transform:translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(124,92,255,.4);
+        }
+
+        .secondary{
+            border:1px solid rgba(34,211,238,.5);
+
+            color:var(--accent2);
+
+            background:rgba(34,211,238,.05);
+        }
+
+        .secondary:hover{
+            background:rgba(34,211,238,.12);
+
+            transform:translateY(-2px);
+        }
+
+        /* ================= INFO ================= */
+
+        .info{
+            max-width:650px;
+
+            margin:30px auto 0;
+
+            padding:17px;
+
+            text-align:center;
+
+            background:#0e1528;
+
+            border:1px solid var(--border);
+
+            border-radius:14px;
+
+            color:var(--muted);
+
+            font-size:14px;
+        }
+
+        .info strong{
+            color:var(--accent2);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:600px){
+
+            .navbar{
+                padding:14px 20px;
+            }
+
+            .container{
+                margin:30px auto;
+
+                padding:15px;
+            }
+
+            .profile-card{
+                width:100%;
+            }
+
+            .buttons{
+                flex-direction:column;
+            }
+
+            .button{
+                width:100%;
+            }
+
+            .description{
+                padding:0 22px;
+            }
+
+            .info{
+                margin:25px 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CloudFlow
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <div class="container">
+
+        <h1>
+            Profile Card Component
+        </h1>
+
+        <p>
+            A modern profile card designed for a SaaS website.
+        </p>
+
+
+        <!-- ================= PROFILE CARD ================= -->
+
+        <div class="profile-card">
+
+            <div class="cover"></div>
+
+
+            <div class="profile-image">
+                S
+            </div>
+
+
+            <h2>
+                Sanjana
+            </h2>
+
+
+            <div class="role">
+                Web Developer
+            </div>
+
+
+            <p class="description">
+                Passionate about creating modern and responsive
+                websites using HTML, CSS, and JavaScript.
+            </p>
+
+
+            <!-- SKILLS -->
+
+            <div class="skills">
+
+                <span class="skill">
+                    HTML
+                </span>
+
+                <span class="skill">
+                    CSS
+                </span>
+
+                <span class="skill">
+                    JavaScript
+                </span>
+
+                <span class="skill">
+                    UI Design
+                </span>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="buttons">
+
+                <a href="#" class="button primary">
+                    View Profile
+                </a>
+
+                <a href="#" class="button secondary">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPLANATION -->
+
+        <div class="info">
+
+            <strong>CSS Concept:</strong>
+
+            This profile card demonstrates
+            <b>flexbox</b>, <b>border-radius</b>,
+            <b>box-shadow</b>, <b>transitions</b>,
+            <b>hover effects</b>, and responsive design.
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
