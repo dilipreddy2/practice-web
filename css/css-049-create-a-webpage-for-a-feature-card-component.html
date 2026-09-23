@@ -1,4 +1,328 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS 049</title><link rel="stylesheet" href="assets/style.css"><style></style><style id="page-css-049">
-/* Page-specific CSS: self-contained styling for this practical. */
-:root{--bg:#0b1020;--panel:#11182b;--panel2:#17213a;--text:#eef2ff;--muted:#a8b3cf;--accent:#7c5cff;--accent2:#22d3ee;--ok:#34d399;--danger:#fb7185;--border:#2a3655}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#080c18,#101a31);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}.top{position:sticky;top:0;z-index:10;background:rgba(8,12,24,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center}.main{max-width:1100px;margin:auto;padding:34px 22px 70px}.hero{padding:28px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(145deg,rgba(124,92,255,.16),rgba(34,211,238,.06));box-shadow:0 18px 45px rgba(0,0,0,.22)}.hero h1{margin:12px 0 8px;font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.15}.hero p{color:var(--muted);margin:0}.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);font-size:.78rem;font-weight:700;letter-spacing:.08em}.demo{margin-top:24px}.demo h2{margin:0 0 14px}.card{background:rgba(17,24,43,.9);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.progress{height:10px;background:#26314d;border-radius:99px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.btn{display:inline-block;border:0;border-radius:10px;padding:10px 16px;background:var(--accent);color:white;font-weight:700}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:#0e1528;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(34,211,238,.12)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:5px 10px;border-radius:999px;background:#202b47;border:1px solid var(--border)}.alert{padding:14px 16px;border-radius:12px;border:1px solid rgba(251,113,133,.4);background:rgba(251,113,133,.1)}.success{padding:14px 16px;border-radius:12px;border:1px solid rgba(52,211,153,.4);background:rgba(52,211,153,.1)}.muted{color:var(--muted)}.center{text-align:center}.pill{display:inline-flex;align-items:center;padding:7px 12px;border-radius:999px;background:#202b47}.shadow{box-shadow:0 20px 50px rgba(0,0,0,.28)}.rounded{border-radius:20px}.avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:800}.row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.stack{display:grid;gap:12px}@media(max-width:650px){.nav{align-items:flex-start;flex-direction:column}.main{padding:22px 14px 50px}.hero,.card{padding:17px}}
-.card{transition:transform .2s ease,box-shadow .2s ease}.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.3)}</style></head><body><header class="top"><div class="nav"><b>CSS Practical #049</b><span><a href="index.html">CSS Programs</a> <a href="../index.html">Home</a></span></div></header><main class="main"><section class="hero"><span class="badge">PROGRAM 049</span><h1>Create a webpage for a feature card component.</h1><p>Corrected implementation and visible output.</p></section><section class="demo"><h2>Output</h2><div class="card"><span class="pill">Featured</span><h2>CloudFlow</h2><p>Modern reusable SaaS card component.</p><button class="btn">View</button></div></section></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Program 49 - Feature Card Component</title>
+
+    <style>
+        :root {
+            --bg: #0b1020;
+            --panel: #11182b;
+            --text: #eef2ff;
+            --muted: #a8b3cf;
+            --accent: #7c5cff;
+            --accent2: #22d3ee;
+            --border: #2a3655;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, Segoe UI, Arial, sans-serif;
+            background: linear-gradient(135deg, #080c18, #101a31);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(8, 12, 24, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 40px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .badge {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 12px;
+            padding: 5px 11px;
+            border-radius: 999px;
+            background: rgba(124, 92, 255, 0.18);
+            border: 1px solid rgba(124, 92, 255, 0.45);
+            color: #c4b5fd;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: var(--text);
+            margin: 0 0 10px;
+            font-size: 32px;
+        }
+
+        .container > p {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+
+        /* Feature Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        /* Feature Card */
+        .feature-card {
+            background: linear-gradient(145deg, #11182b, #0e1528);
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 45px rgba(124, 92, 255, 0.18);
+        }
+
+        /* Circular Feature Icon */
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(
+                135deg,
+                rgba(124, 92, 255, 0.28),
+                rgba(34, 211, 238, 0.14)
+            );
+            border: 1px solid rgba(124, 92, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 8px 20px rgba(124, 92, 255, 0.12);
+        }
+
+        .feature-card h2 {
+            color: var(--text);
+            margin: 0 0 12px;
+            font-size: 21px;
+        }
+
+        .feature-card p {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Learn More Button */
+        .learn-more {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--accent), #5b8cff);
+            color: white;
+            text-decoration: none;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .learn-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(124, 92, 255, 0.3);
+        }
+
+        /* Explanation */
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: #0e1528;
+            color: var(--muted);
+        }
+
+        .info strong {
+            color: var(--accent2);
+        }
+
+        /* Tablet */
+        @media (max-width: 800px) {
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        /* Mobile */
+        @media (max-width: 550px) {
+
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .container {
+                margin: 30px auto;
+                padding: 15px;
+            }
+
+            .container h1 {
+                font-size: 27px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                padding: 25px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            CloudFlow
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <span class="badge">FEATURE CARD COMPONENT</span>
+
+        <h1>Our Features</h1>
+
+        <p>
+            Explore the useful features provided by our platform.
+        </p>
+
+
+        <!-- Feature Cards -->
+        <div class="features">
+
+            <!-- Fast Performance -->
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h2>Fast Performance</h2>
+
+                <p>
+                    Enjoy fast and reliable performance that helps
+                    you complete your tasks quickly and efficiently.
+                </p>
+
+                <a href="#" class="learn-more">
+                    Learn More
+                </a>
+
+            </div>
+
+
+            <!-- Secure -->
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔒
+                </div>
+
+                <h2>Secure</h2>
+
+                <p>
+                    Your information is protected with modern
+                    security features and safe data handling.
+                </p>
+
+                <a href="#" class="learn-more">
+                    Learn More
+                </a>
+
+            </div>
+
+
+            <!-- Cloud Access -->
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ☁️
+                </div>
+
+                <h2>Cloud Access</h2>
+
+                <p>
+                    Access your data and applications from
+                    different devices using cloud technology.
+                </p>
+
+                <a href="#" class="learn-more">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Explanation -->
+        <div class="info">
+
+            <strong>CSS Concepts Used:</strong>
+
+            <p>
+                CSS Grid creates the responsive feature-card layout.
+                Flexbox centers the circular icons, while
+                <b>border-radius</b>, <b>box-shadow</b>,
+                <b>transform</b>, and <b>transition</b> create
+                the modern hover effects. Media queries change
+                the layout from three columns to two and then
+                one column on smaller screens.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
