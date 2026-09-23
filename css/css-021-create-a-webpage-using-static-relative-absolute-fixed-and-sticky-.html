@@ -1,4 +1,458 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS 021</title><link rel="stylesheet" href="assets/style.css"><style></style><style id="page-css-021">
-/* Page-specific CSS: self-contained styling for this practical. */
-:root{--bg:#0b1020;--panel:#11182b;--panel2:#17213a;--text:#eef2ff;--muted:#a8b3cf;--accent:#7c5cff;--accent2:#22d3ee;--ok:#34d399;--danger:#fb7185;--border:#2a3655}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#080c18,#101a31);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}.top{position:sticky;top:0;z-index:10;background:rgba(8,12,24,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center}.main{max-width:1100px;margin:auto;padding:34px 22px 70px}.hero{padding:28px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(145deg,rgba(124,92,255,.16),rgba(34,211,238,.06));box-shadow:0 18px 45px rgba(0,0,0,.22)}.hero h1{margin:12px 0 8px;font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.15}.hero p{color:var(--muted);margin:0}.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);font-size:.78rem;font-weight:700;letter-spacing:.08em}.demo{margin-top:24px}.demo h2{margin:0 0 14px}.card{background:rgba(17,24,43,.9);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.progress{height:10px;background:#26314d;border-radius:99px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.btn{display:inline-block;border:0;border-radius:10px;padding:10px 16px;background:var(--accent);color:white;font-weight:700}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:#0e1528;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(34,211,238,.12)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:5px 10px;border-radius:999px;background:#202b47;border:1px solid var(--border)}.alert{padding:14px 16px;border-radius:12px;border:1px solid rgba(251,113,133,.4);background:rgba(251,113,133,.1)}.success{padding:14px 16px;border-radius:12px;border:1px solid rgba(52,211,153,.4);background:rgba(52,211,153,.1)}.muted{color:var(--muted)}.center{text-align:center}.pill{display:inline-flex;align-items:center;padding:7px 12px;border-radius:999px;background:#202b47}.shadow{box-shadow:0 20px 50px rgba(0,0,0,.28)}.rounded{border-radius:20px}.avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:800}.row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.stack{display:grid;gap:12px}@media(max-width:650px){.nav{align-items:flex-start;flex-direction:column}.main{padding:22px 14px 50px}.hero,.card{padding:17px}}
-</style></head><body><header class="top"><div class="nav"><b>CSS Practical #021</b><span><a href="index.html">CSS Programs</a> <a href="../index.html">Home</a></span></div></header><main class="main"><section class="hero"><span class="badge">PROGRAM 021</span><h1>Create a webpage using static, relative, absolute, fixed, and sticky positioning.</h1><p>Corrected implementation and visible output.</p></section><section class="demo"><h2>Output</h2><div class="grid"><div class="card"><h2>Practical Demonstration</h2><p>Create a webpage using static, relative, absolute, fixed, and sticky positioning.</p><button class="btn">Interact</button></div><div class="card"><h3>Output</h3><p>The requested CSS concept is demonstrated above.</p></div></div></section></main></body></html>
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS Positioning</title>
+
+<style>
+:root{
+    --bg:#0b1020;
+    --panel:#11182b;
+    --text:#eef2ff;
+    --muted:#a8b3cf;
+    --accent:#7c5cff;
+    --accent2:#22d3ee;
+    --border:#2a3655;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:linear-gradient(135deg,#080c18,#101a31);
+    color:var(--text);
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    line-height:1.6;
+}
+
+a{
+    color:var(--accent2);
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* Navigation */
+
+.top{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:rgba(8,12,24,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    max-width:1100px;
+    margin:auto;
+    padding:16px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+}
+
+/* Main */
+
+.main{
+    max-width:1100px;
+    margin:auto;
+    padding:34px 22px 70px;
+}
+
+/* Hero */
+
+.hero{
+    padding:28px;
+    border:1px solid var(--border);
+    border-radius:22px;
+    background:linear-gradient(
+        145deg,
+        rgba(124,92,255,.16),
+        rgba(34,211,238,.06)
+    );
+    box-shadow:0 18px 45px rgba(0,0,0,.22);
+}
+
+.hero h1{
+    margin:12px 0 8px;
+    font-size:clamp(1.5rem,3vw,2.5rem);
+    line-height:1.15;
+}
+
+.hero p{
+    color:var(--muted);
+    margin:0;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:999px;
+    background:rgba(124,92,255,.18);
+    border:1px solid rgba(124,92,255,.45);
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+/* Demo */
+
+.demo{
+    margin-top:24px;
+}
+
+.demo h2{
+    margin:0 0 14px;
+}
+
+.card{
+    background:rgba(17,24,43,.9);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.position-area{
+    position:relative;
+    min-height:850px;
+    padding:25px;
+    border-radius:16px;
+    background:#0e1528;
+    border:1px solid var(--border);
+    overflow:visible;
+}
+
+/* Common box */
+
+.box{
+    width:180px;
+    min-height:80px;
+    padding:18px;
+    margin:20px;
+    color:white;
+    text-align:center;
+    font-weight:700;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* Static Position */
+
+.static{
+    position:static;
+    background:linear-gradient(135deg,#2563eb,#22d3ee);
+}
+
+/* Relative Position */
+
+.relative{
+    position:relative;
+    left:50px;
+    top:20px;
+    background:linear-gradient(135deg,#059669,#34d399);
+}
+
+/* Parent for Absolute Position */
+
+.parent{
+    position:relative;
+    width:100%;
+    max-width:600px;
+    height:230px;
+    background:linear-gradient(
+        135deg,
+        rgba(124,92,255,.12),
+        rgba(34,211,238,.08)
+    );
+    border:2px dashed var(--accent);
+    border-radius:18px;
+    margin:40px 20px;
+    padding:20px;
+}
+
+.parent-title{
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+/* Absolute Position */
+
+.absolute{
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    background:linear-gradient(135deg,#f59e0b,#fb7185);
+    margin:0;
+}
+
+/* Sticky Position */
+
+.sticky{
+    position:sticky;
+    top:85px;
+    background:linear-gradient(135deg,#7c3aed,#a855f7);
+    margin:30px 20px;
+    z-index:5;
+}
+
+/* Fixed Position */
+
+.fixed{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:linear-gradient(135deg,#ef4444,#fb7185);
+    margin:0;
+    z-index:20;
+    width:170px;
+}
+
+/* Scroll Space */
+
+.space{
+    height:600px;
+    padding:30px;
+    margin:30px 20px;
+    border-radius:16px;
+    background:rgba(17,24,43,.7);
+    border:1px solid var(--border);
+}
+
+.space h3{
+    color:var(--accent2);
+}
+
+.info{
+    margin-top:22px;
+    padding:18px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    background:#0e1528;
+}
+
+.info strong{
+    color:var(--accent2);
+}
+
+.info ul{
+    color:var(--muted);
+}
+
+@media(max-width:650px){
+
+    .nav{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .main{
+        padding:22px 14px 50px;
+    }
+
+    .hero,
+    .card{
+        padding:17px;
+    }
+
+    .position-area{
+        padding:12px;
+    }
+
+    .parent{
+        margin-left:10px;
+        margin-right:10px;
+    }
+
+    .relative{
+        left:20px;
+    }
+
+    .fixed{
+        width:145px;
+        right:15px;
+        bottom:15px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="top">
+
+```
+<div class="nav">
+
+    <b>CSS Practical</b>
+
+    <span>
+        <a href="index.html">CSS Programs</a>
+        &nbsp;
+        <a href="../index.html">Home</a>
+    </span>
+
+</div>
+```
+
+</header>
+
+<main class="main">
+
+```
+<section class="hero">
+
+    <span class="badge">CSS POSITIONING</span>
+
+    <h1>
+        CSS Positioning
+    </h1>
+
+    <p>
+        Demonstration of Static, Relative, Absolute,
+        Fixed, and Sticky positioning.
+    </p>
+
+</section>
+
+
+<section class="demo">
+
+    <h2>Output</h2>
+
+    <div class="card">
+
+        <div class="position-area">
+
+
+            <!-- Static -->
+
+            <div class="box static">
+                Static Position
+            </div>
+
+
+            <!-- Relative -->
+
+            <div class="box relative">
+                Relative Position
+            </div>
+
+
+            <!-- Absolute Parent -->
+
+            <div class="parent">
+
+                <div class="parent-title">
+                    Parent container:
+                    position: relative
+                </div>
+
+                <div class="box absolute">
+                    Absolute Position
+                </div>
+
+            </div>
+
+
+            <!-- Sticky -->
+
+            <div class="box sticky">
+                Sticky Position
+            </div>
+
+
+            <!-- Scroll Area -->
+
+            <div class="space">
+
+                <h3>
+                    Scroll the page
+                </h3>
+
+                <p>
+                    The sticky element remains near the
+                    top while you scroll through the page.
+                </p>
+
+                <p>
+                    Continue scrolling to observe the
+                    sticky and fixed positioning.
+                </p>
+
+                <p>
+                    The fixed element stays in the same
+                    position on the screen.
+                </p>
+
+            </div>
+
+
+            <!-- Fixed -->
+
+            <div class="box fixed">
+                Fixed Position
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="info">
+
+        <strong>Positioning Types Used:</strong>
+
+        <ul>
+            <li>
+                <b>Static:</b>
+                Default position of an element.
+            </li>
+
+            <li>
+                <b>Relative:</b>
+                Moves relative to its normal position.
+            </li>
+
+            <li>
+                <b>Absolute:</b>
+                Positioned relative to its positioned parent.
+            </li>
+
+            <li>
+                <b>Sticky:</b>
+                Sticks to a specified position while scrolling.
+            </li>
+
+            <li>
+                <b>Fixed:</b>
+                Stays fixed relative to the browser window.
+            </li>
+        </ul>
+
+    </div>
+
+</section>
+```
+
+</main>
+
+</body>
+</html>
