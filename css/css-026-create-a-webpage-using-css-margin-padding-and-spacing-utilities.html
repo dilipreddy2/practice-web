@@ -1,4 +1,359 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS 026</title><link rel="stylesheet" href="assets/style.css"><style></style><style id="page-css-026">
-/* Page-specific CSS: self-contained styling for this practical. */
-:root{--bg:#0b1020;--panel:#11182b;--panel2:#17213a;--text:#eef2ff;--muted:#a8b3cf;--accent:#7c5cff;--accent2:#22d3ee;--ok:#34d399;--danger:#fb7185;--border:#2a3655}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#080c18,#101a31);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}.top{position:sticky;top:0;z-index:10;background:rgba(8,12,24,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center}.main{max-width:1100px;margin:auto;padding:34px 22px 70px}.hero{padding:28px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(145deg,rgba(124,92,255,.16),rgba(34,211,238,.06));box-shadow:0 18px 45px rgba(0,0,0,.22)}.hero h1{margin:12px 0 8px;font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.15}.hero p{color:var(--muted);margin:0}.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);font-size:.78rem;font-weight:700;letter-spacing:.08em}.demo{margin-top:24px}.demo h2{margin:0 0 14px}.card{background:rgba(17,24,43,.9);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.progress{height:10px;background:#26314d;border-radius:99px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.btn{display:inline-block;border:0;border-radius:10px;padding:10px 16px;background:var(--accent);color:white;font-weight:700}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:#0e1528;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(34,211,238,.12)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:5px 10px;border-radius:999px;background:#202b47;border:1px solid var(--border)}.alert{padding:14px 16px;border-radius:12px;border:1px solid rgba(251,113,133,.4);background:rgba(251,113,133,.1)}.success{padding:14px 16px;border-radius:12px;border:1px solid rgba(52,211,153,.4);background:rgba(52,211,153,.1)}.muted{color:var(--muted)}.center{text-align:center}.pill{display:inline-flex;align-items:center;padding:7px 12px;border-radius:999px;background:#202b47}.shadow{box-shadow:0 20px 50px rgba(0,0,0,.28)}.rounded{border-radius:20px}.avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:800}.row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.stack{display:grid;gap:12px}@media(max-width:650px){.nav{align-items:flex-start;flex-direction:column}.main{padding:22px 14px 50px}.hero,.card{padding:17px}}
-</style></head><body><header class="top"><div class="nav"><b>CSS Practical #026</b><span><a href="index.html">CSS Programs</a> <a href="../index.html">Home</a></span></div></header><main class="main"><section class="hero"><span class="badge">PROGRAM 026</span><h1>Create a webpage using CSS margin, padding, and spacing utilities.</h1><p>Corrected implementation and visible output.</p></section><section class="demo"><h2>Output</h2><div class="grid"><div class="card"><h2>Practical Demonstration</h2><p>Create a webpage using CSS margin, padding, and spacing utilities.</p><button class="btn">Interact</button></div><div class="card"><h3>Output</h3><p>The requested CSS concept is demonstrated above.</p></div></div></section></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Spacing Utilities</title>
+
+    <style>
+        :root{
+            --bg:#0b1020;
+            --panel:#11182b;
+            --text:#eef2ff;
+            --muted:#a8b3cf;
+            --accent:#7c5cff;
+            --accent2:#22d3ee;
+            --ok:#34d399;
+            --border:#2a3655;
+        }
+
+        *{
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            margin:0;
+            background:linear-gradient(135deg,#080c18,#101a31);
+            color:var(--text);
+            font-family:Inter,Segoe UI,Arial,sans-serif;
+            line-height:1.6;
+        }
+
+        a{
+            color:var(--accent2);
+            text-decoration:none;
+        }
+
+        a:hover{
+            text-decoration:underline;
+        }
+
+        /* Navigation */
+        .top{
+            position:sticky;
+            top:0;
+            z-index:10;
+            background:rgba(8,12,24,.92);
+            backdrop-filter:blur(10px);
+            border-bottom:1px solid var(--border);
+        }
+
+        .nav{
+            max-width:1100px;
+            margin:auto;
+            padding:16px 22px;
+            display:flex;
+            justify-content:space-between;
+            gap:16px;
+            align-items:center;
+        }
+
+        .nav-title{
+            font-weight:800;
+            color:white;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:18px;
+        }
+
+        /* Main */
+        .main{
+            max-width:1100px;
+            margin:auto;
+            padding:34px 22px 70px;
+        }
+
+        /* Hero */
+        .hero{
+            padding:28px;
+            border:1px solid var(--border);
+            border-radius:22px;
+            background:linear-gradient(
+                145deg,
+                rgba(124,92,255,.16),
+                rgba(34,211,238,.06)
+            );
+            box-shadow:0 18px 45px rgba(0,0,0,.22);
+        }
+
+        .badge{
+            display:inline-block;
+            padding:5px 10px;
+            border-radius:999px;
+            background:rgba(124,92,255,.18);
+            border:1px solid rgba(124,92,255,.45);
+            font-size:.78rem;
+            font-weight:700;
+            letter-spacing:.08em;
+        }
+
+        .hero h1{
+            margin:12px 0 8px;
+            font-size:clamp(1.5rem,3vw,2.5rem);
+            line-height:1.15;
+        }
+
+        .hero p{
+            color:var(--muted);
+            margin:0;
+        }
+
+        /* Demo */
+        .demo{
+            margin-top:24px;
+        }
+
+        .card{
+            background:rgba(17,24,43,.9);
+            border:1px solid var(--border);
+            border-radius:18px;
+            padding:22px;
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+
+        .card h2{
+            color:var(--accent2);
+            margin-top:0;
+        }
+
+        .spacing-area{
+            background:#0e1528;
+            border:1px solid var(--border);
+            border-radius:16px;
+            padding:20px;
+        }
+
+        /* Common Box */
+        .box{
+            color:white;
+            border-radius:14px;
+            font-weight:700;
+            text-align:center;
+            box-shadow:0 10px 25px rgba(0,0,0,.2);
+        }
+
+        /* Margin Utilities */
+        .margin-small{
+            margin:10px;
+            padding:20px;
+            background:linear-gradient(
+                135deg,
+                #7c5cff,
+                #22d3ee
+            );
+        }
+
+        .margin-large{
+            margin:40px;
+            padding:20px;
+            background:linear-gradient(
+                135deg,
+                #8b5cf6,
+                #ec4899
+            );
+        }
+
+        /* Padding Utilities */
+        .padding-small{
+            margin:20px 0;
+            padding:10px;
+            background:linear-gradient(
+                135deg,
+                #06b6d4,
+                #2563eb
+            );
+        }
+
+        .padding-large{
+            margin:20px 0;
+            padding:40px;
+            background:linear-gradient(
+                135deg,
+                #f97316,
+                #ef4444
+            );
+        }
+
+        /* Custom Spacing */
+        .custom-spacing{
+            margin-top:30px;
+            margin-bottom:20px;
+            padding-left:40px;
+            padding-right:40px;
+            padding-top:20px;
+            padding-bottom:20px;
+
+            background:linear-gradient(
+                135deg,
+                rgba(52,211,153,.25),
+                rgba(34,211,238,.12)
+            );
+
+            border:2px solid var(--ok);
+            border-radius:14px;
+            text-align:center;
+            font-weight:700;
+        }
+
+        /* Info */
+        .info{
+            margin-top:22px;
+            padding:18px;
+            border-radius:14px;
+            border:1px solid var(--border);
+            background:#0e1528;
+        }
+
+        .info strong{
+            color:var(--accent2);
+        }
+
+        .label{
+            display:inline-block;
+            margin-bottom:8px;
+            padding:5px 10px;
+            border-radius:999px;
+            background:rgba(124,92,255,.15);
+            color:#cfc7ff;
+            font-size:.8rem;
+            font-weight:700;
+        }
+
+        @media(max-width:650px){
+
+            .nav{
+                align-items:flex-start;
+                flex-direction:column;
+            }
+
+            .nav-links{
+                flex-wrap:wrap;
+            }
+
+            .main{
+                padding:22px 14px 50px;
+            }
+
+            .hero,
+            .card{
+                padding:17px;
+            }
+
+            .margin-large{
+                margin:25px;
+            }
+
+            .padding-large{
+                padding:30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="top">
+        <div class="nav">
+            <div class="nav-title">CSS Practical</div>
+
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="index.html">CSS Programs</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="main">
+
+        <!-- Hero -->
+        <section class="hero">
+            <span class="badge">CSS SPACING</span>
+
+            <h1>CSS Spacing Utilities</h1>
+
+            <p>
+                Demonstration of margin, padding and individual
+                spacing properties in CSS.
+            </p>
+        </section>
+
+        <!-- Demo -->
+        <section class="demo">
+
+            <div class="card">
+
+                <span class="label">Spacing Examples</span>
+
+                <h2>Margin and Padding</h2>
+
+                <div class="spacing-area">
+
+                    <div class="box margin-small">
+                        Small Margin — 10px
+                    </div>
+
+                    <div class="box margin-large">
+                        Large Margin — 40px
+                    </div>
+
+                    <div class="box padding-small">
+                        Small Padding — 10px
+                    </div>
+
+                    <div class="box padding-large">
+                        Large Padding — 40px
+                    </div>
+
+                    <div class="custom-spacing">
+                        Custom Margin and Padding
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Explanation -->
+        <div class="info">
+
+            <strong>How it works:</strong>
+
+            <p>
+                <b>Margin</b> creates space outside an element.
+            </p>
+
+            <p>
+                <b>Padding</b> creates space between the content
+                and the element's border.
+            </p>
+
+            <p>
+                <b>Individual spacing</b> allows you to control
+                margin-top, margin-bottom, padding-left,
+                padding-right, and other sides separately.
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
