@@ -1,5 +1,113 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS 110</title><link rel="stylesheet" href="assets/style.css"><style></style><style id="page-css-110">
-/* Page-specific CSS: self-contained styling for this practical. */
-:root{--bg:#0b1020;--panel:#11182b;--panel2:#17213a;--text:#eef2ff;--muted:#a8b3cf;--accent:#7c5cff;--accent2:#22d3ee;--ok:#34d399;--danger:#fb7185;--border:#2a3655}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#080c18,#101a31);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}.top{position:sticky;top:0;z-index:10;background:rgba(8,12,24,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center}.main{max-width:1100px;margin:auto;padding:34px 22px 70px}.hero{padding:28px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(145deg,rgba(124,92,255,.16),rgba(34,211,238,.06));box-shadow:0 18px 45px rgba(0,0,0,.22)}.hero h1{margin:12px 0 8px;font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.15}.hero p{color:var(--muted);margin:0}.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);font-size:.78rem;font-weight:700;letter-spacing:.08em}.demo{margin-top:24px}.demo h2{margin:0 0 14px}.card{background:rgba(17,24,43,.9);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.progress{height:10px;background:#26314d;border-radius:99px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}.btn{display:inline-block;border:0;border-radius:10px;padding:10px 16px;background:var(--accent);color:white;font-weight:700}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:#0e1528;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(34,211,238,.12)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:5px 10px;border-radius:999px;background:#202b47;border:1px solid var(--border)}.alert{padding:14px 16px;border-radius:12px;border:1px solid rgba(251,113,133,.4);background:rgba(251,113,133,.1)}.success{padding:14px 16px;border-radius:12px;border:1px solid rgba(52,211,153,.4);background:rgba(52,211,153,.1)}.muted{color:var(--muted)}.center{text-align:center}.pill{display:inline-flex;align-items:center;padding:7px 12px;border-radius:999px;background:#202b47}.shadow{box-shadow:0 20px 50px rgba(0,0,0,.28)}.rounded{border-radius:20px}.avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:800}.row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.stack{display:grid;gap:12px}@media(max-width:650px){.nav{align-items:flex-start;flex-direction:column}.main{padding:22px 14px 50px}.hero,.card{padding:17px}}
-.card{transition:transform .2s ease,box-shadow .2s ease}.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.3)}
-.chart{min-height:220px;display:flex;align-items:end;gap:10px}.chart>*{flex:1;border-radius:8px 8px 2px 2px;background:linear-gradient(180deg,var(--accent2),var(--accent));min-height:30px}</style></head><body><header class="top"><div class="nav"><b>CSS Practical #110</b><span><a href="index.html">CSS Programs</a> <a href="../index.html">Home</a></span></div></header><main class="main"><section class="hero"><span class="badge">PROGRAM 110</span><h1>Create a webpage for data visualization cards.</h1><p>Corrected implementation and visible output.</p></section><section class="demo"><h2>Output</h2><div class="grid"><div class="card"><h2>Practical Demonstration</h2><p>Create a webpage for data visualization cards.</p><button class="btn">Interact</button></div><div class="card"><h3>Output</h3><p>The requested CSS concept is demonstrated above.</p></div></div></section></main></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization Cards</title>
+    <style>
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:Arial,sans-serif; background:#f1f5f9; color:#1e293b; }
+        .page { max-width:1100px; margin:auto; padding:30px; }
+        header { background:#0f172a; color:white; padding:25px; border-radius:12px; margin-bottom:25px; }
+        header h1 { margin-bottom:8px; }
+        header p { color:#cbd5e1; }
+        .card,.report,.response,.contentcard,.search,.results,.promptbox,.suggestions,.autocomplete,.command,.chat,.form,.donuts,.heatmap,.funnel { background:white; padding:25px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.06); }
+        .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+        .card h2 { margin:10px 0; }
+        button { border:0; background:#2563eb; color:white; padding:11px 16px; border-radius:7px; cursor:pointer; }
+        button:hover { background:#1d4ed8; }
+        .funnel { display:flex; flex-direction:column; align-items:center; gap:10px; }
+        .stage { color:white; padding:20px; text-align:center; border-radius:8px; }
+        .stage span { display:block; margin-top:5px; }
+        .s1{background:#1e3a8a;width:100%} .s2{background:#2563eb;width:80%} .s3{background:#3b82f6;width:60%} .s4{background:#60a5fa;width:40%}
+        .chart { height:280px; display:flex; align-items:flex-end; gap:12px; padding:20px; border-left:1px solid #cbd5e1; border-bottom:1px solid #cbd5e1; }
+        
+        @media(max-width:800px) { .grid{grid-template-columns:repeat(2,1fr)} .donuts{flex-direction:column} }
+        @media(max-width:550px) { .page{padding:15px} .grid{grid-template-columns:1fr} .chart{gap:5px} }
+    </style>
+
+<style>
+:root{
+ --bg:#0b1020;
+ --panel:#11182b;
+ --panel2:#0e1528;
+ --text:#eef2ff;
+ --muted:#a8b3cf;
+ --accent:#7c5cff;
+ --accent2:#22d3ee;
+ --ok:#34d399;
+ --danger:#fb7185;
+ --border:#2a3655;
+}
+html{scroll-behavior:smooth}
+body{
+ background:linear-gradient(135deg,#080c18,#101a31)!important;
+ color:var(--text)!important;
+ font-family:Inter,Segoe UI,Arial,sans-serif!important;
+ line-height:1.6;
+}
+h1,h2,h3,h4,h5,h6{color:var(--text)}
+p,li,label,small{color:var(--muted)}
+a{color:var(--accent2);transition:.25s}
+a:hover{color:#fff}
+nav,.navbar,.top,header{
+ background:rgba(8,12,24,.94)!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ backdrop-filter:blur(10px);
+}
+.logo{
+ background:linear-gradient(90deg,var(--accent),var(--accent2));
+ -webkit-background-clip:text!important;
+ -webkit-text-fill-color:transparent!important;
+ color:var(--accent2);
+}
+button,.btn,.button,input[type="submit"],input[type="button"]{
+ border-radius:10px;
+ transition:transform .25s,box-shadow .25s,background .25s;
+}
+button:hover,.btn:hover,.button:hover,input[type="submit"]:hover,input[type="button"]:hover{
+ transform:translateY(-2px);
+}
+.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,
+.panel,.box,.content-box,.form-container,.contact-form,.profile-card,
+.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,
+.modal-content,.container-card,.plan,.table-container{
+ background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ box-shadow:0 14px 35px rgba(0,0,0,.22);
+}
+input,textarea,select{
+ background:#0e1528!important;
+ color:var(--text)!important;
+ border:1px solid var(--border)!important;
+ border-radius:8px;
+}
+input::placeholder,textarea::placeholder{color:#71809f}
+table{border-color:var(--border)!important}
+th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}
+td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}
+img{max-width:100%}
+.badge,.tag,.label{
+ border-radius:999px;
+}
+@media(max-width:700px){
+ body{overflow-x:hidden}
+}
+</style>
+</head>
+<body>
+    <main class="page">
+        <header>
+            <h1>Data Visualization Cards</h1>
+            <p>A collection of cards presenting important visualization metrics.</p>
+        </header>
+        
+        <div class="grid">
+            <div class="card"><small>Metric</small><h2>48.6K</h2><p>Users this month</p></div>
+            <div class="card"><small>Growth</small><h2>+18.4%</h2><p>Compared with last month</p></div>
+            <div class="card"><small>Revenue</small><h2>$428K</h2><p>Current period</p></div>
+            <div class="card"><small>Conversion</small><h2>7.8%</h2><p>Current rate</p></div>
+        </div>
+    </main>
+</body>
+</html>
