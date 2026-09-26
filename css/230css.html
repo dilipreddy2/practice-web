@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Sliding Card Animation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            position: relative;
+            height: 250px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .slide {
+            position: absolute;
+            left: -100%;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+            transition: left 0.5s ease;
+        }
+
+        .card:hover .slide {
+            left: 0;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 700px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+<style>
+:root{
+ --bg:#0b1020;
+ --panel:#11182b;
+ --panel2:#0e1528;
+ --text:#eef2ff;
+ --muted:#a8b3cf;
+ --accent:#7c5cff;
+ --accent2:#22d3ee;
+ --ok:#34d399;
+ --danger:#fb7185;
+ --border:#2a3655;
+}
+html{scroll-behavior:smooth}
+body{
+ background:linear-gradient(135deg,#080c18,#101a31)!important;
+ color:var(--text)!important;
+ font-family:Inter,Segoe UI,Arial,sans-serif!important;
+ line-height:1.6;
+}
+h1,h2,h3,h4,h5,h6{color:var(--text)}
+p,li,label,small{color:var(--muted)}
+a{color:var(--accent2);transition:.25s}
+a:hover{color:#fff}
+nav,.navbar,.top,header{
+ background:rgba(8,12,24,.94)!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ backdrop-filter:blur(10px);
+}
+.logo{
+ background:linear-gradient(90deg,var(--accent),var(--accent2));
+ -webkit-background-clip:text!important;
+ -webkit-text-fill-color:transparent!important;
+ color:var(--accent2);
+}
+button,.btn,.button,input[type="submit"],input[type="button"]{
+ border-radius:10px;
+ transition:transform .25s,box-shadow .25s,background .25s;
+}
+button:hover,.btn:hover,.button:hover,input[type="submit"]:hover,input[type="button"]:hover{
+ transform:translateY(-2px);
+}
+.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,
+.panel,.box,.content-box,.form-container,.contact-form,.profile-card,
+.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,
+.modal-content,.container-card,.plan,.table-container{
+ background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ box-shadow:0 14px 35px rgba(0,0,0,.22);
+}
+input,textarea,select{
+ background:#0e1528!important;
+ color:var(--text)!important;
+ border:1px solid var(--border)!important;
+ border-radius:8px;
+}
+input::placeholder,textarea::placeholder{color:#71809f}
+table{border-color:var(--border)!important}
+th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}
+td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}
+img{max-width:100%}
+.badge,.tag,.label{
+ border-radius:999px;
+}
+@media(max-width:700px){
+ body{overflow-x:hidden}
+}
+</style>
+</head>
+
+<body>
+
+    <h1>Sliding Card Animation</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="content">
+                <h2>Analytics</h2>
+                <p>Hover over the card.</p>
+            </div>
+
+            <div class="slide">
+                <div>
+                    <h2>Analytics</h2>
+                    <p>View detailed business analytics.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="content">
+                <h2>Users</h2>
+                <p>Hover over the card.</p>
+            </div>
+
+            <div class="slide">
+                <div>
+                    <h2>Users</h2>
+                    <p>Manage all your users easily.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="content">
+                <h2>Reports</h2>
+                <p>Hover over the card.</p>
+            </div>
+
+            <div class="slide">
+                <div>
+                    <h2>Reports</h2>
+                    <p>Create and download reports.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

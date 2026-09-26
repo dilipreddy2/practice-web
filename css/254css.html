@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI-Powered SaaS Dashboard</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f5f3ff;color:#1f2937}
+.container{max-width:1150px;margin:auto;padding:25px}
+header{display:flex;justify-content:space-between;align-items:center}
+.badge{background:#ede9fe;color:#6d28d9;padding:7px 12px;border-radius:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}
+.card{background:white;padding:22px;border-radius:14px;box-shadow:0 5px 18px #0001}
+.big{grid-column:span 2}
+.metric{font-size:30px;font-weight:bold;margin:10px 0}
+.insight{border-left:4px solid #7c3aed;padding-left:15px;margin:15px 0}
+.btn{background:#7c3aed;color:white;border:0;padding:11px 18px;border-radius:8px}
+@media(max-width:750px){.grid{grid-template-columns:1fr}.big{grid-column:auto}}
+</style>
+
+<style>
+:root{
+ --bg:#0b1020;
+ --panel:#11182b;
+ --panel2:#0e1528;
+ --text:#eef2ff;
+ --muted:#a8b3cf;
+ --accent:#7c5cff;
+ --accent2:#22d3ee;
+ --ok:#34d399;
+ --danger:#fb7185;
+ --border:#2a3655;
+}
+html{scroll-behavior:smooth}
+body{
+ background:linear-gradient(135deg,#080c18,#101a31)!important;
+ color:var(--text)!important;
+ font-family:Inter,Segoe UI,Arial,sans-serif!important;
+ line-height:1.6;
+}
+h1,h2,h3,h4,h5,h6{color:var(--text)}
+p,li,label,small{color:var(--muted)}
+a{color:var(--accent2);transition:.25s}
+a:hover{color:#fff}
+nav,.navbar,.top,header{
+ background:rgba(8,12,24,.94)!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ backdrop-filter:blur(10px);
+}
+.logo{
+ background:linear-gradient(90deg,var(--accent),var(--accent2));
+ -webkit-background-clip:text!important;
+ -webkit-text-fill-color:transparent!important;
+ color:var(--accent2);
+}
+button,.btn,.button,input[type="submit"],input[type="button"]{
+ border-radius:10px;
+ transition:transform .25s,box-shadow .25s,background .25s;
+}
+button:hover,.btn:hover,.button:hover,input[type="submit"]:hover,input[type="button"]:hover{
+ transform:translateY(-2px);
+}
+.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,
+.panel,.box,.content-box,.form-container,.contact-form,.profile-card,
+.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,
+.modal-content,.container-card,.plan,.table-container{
+ background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ box-shadow:0 14px 35px rgba(0,0,0,.22);
+}
+input,textarea,select{
+ background:#0e1528!important;
+ color:var(--text)!important;
+ border:1px solid var(--border)!important;
+ border-radius:8px;
+}
+input::placeholder,textarea::placeholder{color:#71809f}
+table{border-color:var(--border)!important}
+th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}
+td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}
+img{max-width:100%}
+.badge,.tag,.label{
+ border-radius:999px;
+}
+@media(max-width:700px){
+ body{overflow-x:hidden}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div><h1>AI Workspace</h1><p>Intelligent insights for your business.</p></div>
+<span class="badge">✦ AI Enabled</span>
+</header>
+<div class="grid">
+<div class="card big">
+<h2>AI Performance Overview</h2>
+<p>AI detected a positive growth pattern in your recent data.</p>
+<div class="metric">+24.8%</div>
+<div class="insight"><b>AI Insight:</b> Customer engagement increased after your latest campaign.</div>
+<button class="btn">Generate Report</button>
+</div>
+<div class="card"><h2>AI Requests</h2><div class="metric">12,480</div><p>Requests processed this month.</p></div>
+<div class="card"><h2>Predictions</h2><p>Next month revenue</p><div class="metric">$124K</div><p>Confidence: 91%</p></div>
+<div class="card"><h2>Smart Recommendations</h2><p>• Improve onboarding</p><p>• Contact inactive users</p><p>• Review campaign results</p></div>
+<div class="card"><h2>AI Status</h2><p>🟢 All systems operational</p><p>Models updated today.</p></div>
+</div>
+</div>
+</body>
+</html>

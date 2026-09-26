@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Functions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        /* calc() Function */
+        .calc-box {
+            width: calc(100% - 40px);
+            background-color: lightblue;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /* min() Function */
+        .min-box {
+            width: min(500px, 90%);
+            background-color: lightgreen;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        /* max() Function */
+        .max-box {
+            width: max(300px, 50%);
+            background-color: lightyellow;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        /* clamp() Function */
+        .clamp-text {
+            font-size: clamp(18px, 4vw, 40px);
+            color: purple;
+            text-align: center;
+        }
+    </style>
+<style id="cloudflow-theme">:root{--text:#eef2ff;--muted:#a8b3cf;--accent:#7c5cff;--accent2:#22d3ee;--border:#2a3655}html{scroll-behavior:smooth}body{background:linear-gradient(135deg,#080c18,#101a31)!important;color:var(--text)!important;font-family:Inter,Segoe UI,Arial,sans-serif!important;line-height:1.6}h1,h2,h3,h4,h5,h6{color:var(--text)}p,li,label,small{color:var(--muted)}a{color:var(--accent2)}nav,.navbar,.top,header{background:rgba(8,12,24,.94)!important;color:var(--text)!important;border-color:var(--border)!important;backdrop-filter:blur(10px)}.logo{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;color:var(--accent2)}button,.btn,.button,input[type=submit],input[type=button]{border-radius:10px;transition:.25s}button:hover,.btn:hover,.button:hover,input[type=submit]:hover,input[type=button]:hover{transform:translateY(-2px)}.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,.panel,.box,.content-box,.form-container,.contact-form,.profile-card,.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,.modal-content,.container-card,.plan,.table-container{background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;color:var(--text)!important;border-color:var(--border)!important;box-shadow:0 14px 35px rgba(0,0,0,.22)}input,textarea,select{background:#0e1528!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:8px}input::placeholder,textarea::placeholder{color:#71809f}table{border-color:var(--border)!important}th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}img{max-width:100%}.badge,.tag,.label{border-radius:999px}@media(max-width:700px){body{overflow-x:hidden}}</style>
+</head>
+
+<body>
+
+    <h1>CSS Functions</h1>
+
+    <div class="calc-box">
+        <h2>calc() Function</h2>
+        <p>
+            Width is calculated using 100% minus 40 pixels.
+        </p>
+    </div>
+
+    <div class="min-box">
+        <h2>min() Function</h2>
+        <p>
+            Width will be the smaller value between 500px and 90%.
+        </p>
+    </div>
+
+    <div class="max-box">
+        <h2>max() Function</h2>
+        <p>
+            Width will be the larger value between 300px and 50%.
+        </p>
+    </div>
+
+    <p class="clamp-text">
+        This text uses the clamp() function.
+    </p>
+
+</body>
+</html>

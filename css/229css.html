@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated SaaS Cards</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .cards {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            animation: cardEntry 1s ease forwards;
+            opacity: 0;
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+            animation: floatIcon 2s ease-in-out infinite;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        @keyframes cardEntry {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatIcon {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+<style>
+:root{
+ --bg:#0b1020;
+ --panel:#11182b;
+ --panel2:#0e1528;
+ --text:#eef2ff;
+ --muted:#a8b3cf;
+ --accent:#7c5cff;
+ --accent2:#22d3ee;
+ --ok:#34d399;
+ --danger:#fb7185;
+ --border:#2a3655;
+}
+html{scroll-behavior:smooth}
+body{
+ background:linear-gradient(135deg,#080c18,#101a31)!important;
+ color:var(--text)!important;
+ font-family:Inter,Segoe UI,Arial,sans-serif!important;
+ line-height:1.6;
+}
+h1,h2,h3,h4,h5,h6{color:var(--text)}
+p,li,label,small{color:var(--muted)}
+a{color:var(--accent2);transition:.25s}
+a:hover{color:#fff}
+nav,.navbar,.top,header{
+ background:rgba(8,12,24,.94)!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ backdrop-filter:blur(10px);
+}
+.logo{
+ background:linear-gradient(90deg,var(--accent),var(--accent2));
+ -webkit-background-clip:text!important;
+ -webkit-text-fill-color:transparent!important;
+ color:var(--accent2);
+}
+button,.btn,.button,input[type="submit"],input[type="button"]{
+ border-radius:10px;
+ transition:transform .25s,box-shadow .25s,background .25s;
+}
+button:hover,.btn:hover,.button:hover,input[type="submit"]:hover,input[type="button"]:hover{
+ transform:translateY(-2px);
+}
+.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,
+.panel,.box,.content-box,.form-container,.contact-form,.profile-card,
+.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,
+.modal-content,.container-card,.plan,.table-container{
+ background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ box-shadow:0 14px 35px rgba(0,0,0,.22);
+}
+input,textarea,select{
+ background:#0e1528!important;
+ color:var(--text)!important;
+ border:1px solid var(--border)!important;
+ border-radius:8px;
+}
+input::placeholder,textarea::placeholder{color:#71809f}
+table{border-color:var(--border)!important}
+th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}
+td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}
+img{max-width:100%}
+.badge,.tag,.label{
+ border-radius:999px;
+}
+@media(max-width:700px){
+ body{overflow-x:hidden}
+}
+</style>
+</head>
+
+<body>
+
+    <h1>Animated SaaS Components</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h2>Performance</h2>
+            <p>Improve application performance.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📈</div>
+            <h2>Analytics</h2>
+            <p>Monitor business growth.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔒</div>
+            <h2>Security</h2>
+            <p>Keep your data protected.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

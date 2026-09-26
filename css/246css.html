@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Team Workspace</title>
+
+<style>
+*{box-sizing:border-box;font-family:Arial}
+body{margin:0;background:#f5f7fb;color:#111827}
+header{
+ background:#111827;color:white;padding:18px 5%;
+ display:flex;justify-content:space-between
+}
+.container{width:92%;max-width:1200px;margin:30px auto}
+.grid{
+ display:grid;grid-template-columns:2fr 1fr;gap:20px
+}
+.card{
+ background:white;border:1px solid #e5e7eb;
+ border-radius:12px;padding:25px
+}
+.member{
+ display:flex;align-items:center;gap:12px;
+ padding:13px 0;border-bottom:1px solid #e5e7eb
+}
+.avatar{
+ width:40px;height:40px;border-radius:50%;
+ background:#2563eb;color:white;
+ display:flex;align-items:center;justify-content:center
+}
+.member span{font-size:12px;color:#64748b}
+.task{
+ padding:13px;background:#f8fafc;
+ margin:10px 0;border-radius:7px
+}
+button{
+ border:0;background:#2563eb;color:white;
+ padding:10px 15px;border-radius:7px;cursor:pointer
+}
+@media(max-width:750px){
+ .grid{grid-template-columns:1fr}
+}
+</style>
+
+<style>
+:root{
+ --bg:#0b1020;
+ --panel:#11182b;
+ --panel2:#0e1528;
+ --text:#eef2ff;
+ --muted:#a8b3cf;
+ --accent:#7c5cff;
+ --accent2:#22d3ee;
+ --ok:#34d399;
+ --danger:#fb7185;
+ --border:#2a3655;
+}
+html{scroll-behavior:smooth}
+body{
+ background:linear-gradient(135deg,#080c18,#101a31)!important;
+ color:var(--text)!important;
+ font-family:Inter,Segoe UI,Arial,sans-serif!important;
+ line-height:1.6;
+}
+h1,h2,h3,h4,h5,h6{color:var(--text)}
+p,li,label,small{color:var(--muted)}
+a{color:var(--accent2);transition:.25s}
+a:hover{color:#fff}
+nav,.navbar,.top,header{
+ background:rgba(8,12,24,.94)!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ backdrop-filter:blur(10px);
+}
+.logo{
+ background:linear-gradient(90deg,var(--accent),var(--accent2));
+ -webkit-background-clip:text!important;
+ -webkit-text-fill-color:transparent!important;
+ color:var(--accent2);
+}
+button,.btn,.button,input[type="submit"],input[type="button"]{
+ border-radius:10px;
+ transition:transform .25s,box-shadow .25s,background .25s;
+}
+button:hover,.btn:hover,.button:hover,input[type="submit"]:hover,input[type="button"]:hover{
+ transform:translateY(-2px);
+}
+.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,
+.panel,.box,.content-box,.form-container,.contact-form,.profile-card,
+.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,
+.modal-content,.container-card,.plan,.table-container{
+ background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ box-shadow:0 14px 35px rgba(0,0,0,.22);
+}
+input,textarea,select{
+ background:#0e1528!important;
+ color:var(--text)!important;
+ border:1px solid var(--border)!important;
+ border-radius:8px;
+}
+input::placeholder,textarea::placeholder{color:#71809f}
+table{border-color:var(--border)!important}
+th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}
+td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}
+img{max-width:100%}
+.badge,.tag,.label{
+ border-radius:999px;
+}
+@media(max-width:700px){
+ body{overflow-x:hidden}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>TeamSpace</h2>
+<button onclick="invite()">+ Invite</button>
+</header>
+
+<main class="container">
+
+<h1>Engineering Workspace</h1><br>
+
+<div class="grid">
+
+<div class="card">
+<h2>Team Tasks</h2>
+
+<div class="task">
+<strong>Complete API integration</strong>
+<p>Assigned to John</p>
+</div>
+
+<div class="task">
+<strong>Review dashboard design</strong>
+<p>Assigned to Sarah</p>
+</div>
+
+<div class="task">
+<strong>Prepare release notes</strong>
+<p>Assigned to Alex</p>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Team Members</h2>
+
+<div class="member">
+<div class="avatar">JD</div>
+<div>John Doe<br><span>Developer</span></div>
+</div>
+
+<div class="member">
+<div class="avatar">SA</div>
+<div>Sarah Adams<br><span>Designer</span></div>
+</div>
+
+<div class="member">
+<div class="avatar">AM</div>
+<div>Alex Martin<br><span>Manager</span></div>
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<script>
+function invite(){
+ const email=prompt("Enter team member email:");
+
+ if(email){
+  alert("Invitation sent to "+email);
+ }
+}
+</script>
+
+</body>
+</html>

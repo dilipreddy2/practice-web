@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Relative Units</title>
+
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .box {
+            background-color: lightblue;
+            border: 2px solid blue;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .em-box {
+            font-size: 20px;
+            padding: 2em;
+        }
+
+        .rem-box {
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+
+        .vw-box {
+            width: 50vw;
+            background-color: lightgreen;
+        }
+
+        .vh-box {
+            height: 20vh;
+            background-color: lightyellow;
+        }
+
+        .percentage-box {
+            width: 70%;
+            background-color: lightpink;
+        }
+    </style>
+<style id="cloudflow-theme">:root{--text:#eef2ff;--muted:#a8b3cf;--accent:#7c5cff;--accent2:#22d3ee;--border:#2a3655}html{scroll-behavior:smooth}body{background:linear-gradient(135deg,#080c18,#101a31)!important;color:var(--text)!important;font-family:Inter,Segoe UI,Arial,sans-serif!important;line-height:1.6}h1,h2,h3,h4,h5,h6{color:var(--text)}p,li,label,small{color:var(--muted)}a{color:var(--accent2)}nav,.navbar,.top,header{background:rgba(8,12,24,.94)!important;color:var(--text)!important;border-color:var(--border)!important;backdrop-filter:blur(10px)}.logo{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;color:var(--accent2)}button,.btn,.button,input[type=submit],input[type=button]{border-radius:10px;transition:.25s}button:hover,.btn:hover,.button:hover,input[type=submit]:hover,input[type=button]:hover{transform:translateY(-2px)}.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,.panel,.box,.content-box,.form-container,.contact-form,.profile-card,.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,.modal-content,.container-card,.plan,.table-container{background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;color:var(--text)!important;border-color:var(--border)!important;box-shadow:0 14px 35px rgba(0,0,0,.22)}input,textarea,select{background:#0e1528!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:8px}input::placeholder,textarea::placeholder{color:#71809f}table{border-color:var(--border)!important}th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}img{max-width:100%}.badge,.tag,.label{border-radius:999px}@media(max-width:700px){body{overflow-x:hidden}}</style>
+</head>
+
+<body>
+
+    <h1>CSS Relative Units</h1>
+
+    <div class="box em-box">
+        This box uses em units.
+    </div>
+
+    <div class="box rem-box">
+        This box uses rem units.
+    </div>
+
+    <div class="box vw-box">
+        This box uses vw units.
+    </div>
+
+    <div class="box vh-box">
+        This box uses vh units.
+    </div>
+
+    <div class="box percentage-box">
+        This box uses percentage units.
+    </div>
+
+</body>
+</html>

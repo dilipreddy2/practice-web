@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Card Component</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+        }
+
+        .navbar {
+            background-color: #172554;
+            color: white;
+            padding: 18px 40px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background-color: #dbeafe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .value {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            color: #16a34a;
+            font-size: 14px;
+        }
+
+        .progress {
+            height: 8px;
+            background-color: #e5e7eb;
+            border-radius: 10px;
+            margin-top: 18px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #2563eb;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                padding: 15px 20px;
+                font-size: 20px;
+            }
+
+            .container {
+                width: 92%;
+            }
+        }
+    </style>
+<style id="cloudflow-theme">:root{--text:#eef2ff;--muted:#a8b3cf;--accent:#7c5cff;--accent2:#22d3ee;--border:#2a3655}html{scroll-behavior:smooth}body{background:linear-gradient(135deg,#080c18,#101a31)!important;color:var(--text)!important;font-family:Inter,Segoe UI,Arial,sans-serif!important;line-height:1.6}h1,h2,h3,h4,h5,h6{color:var(--text)}p,li,label,small{color:var(--muted)}a{color:var(--accent2)}nav,.navbar,.top,header{background:rgba(8,12,24,.94)!important;color:var(--text)!important;border-color:var(--border)!important;backdrop-filter:blur(10px)}.logo{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important;color:var(--accent2)}button,.btn,.button,input[type=submit],input[type=button]{border-radius:10px;transition:.25s}button:hover,.btn:hover,.button:hover,input[type=submit]:hover,input[type=button]:hover{transform:translateY(-2px)}.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,.panel,.box,.content-box,.form-container,.contact-form,.profile-card,.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,.modal-content,.container-card,.plan,.table-container{background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;color:var(--text)!important;border-color:var(--border)!important;box-shadow:0 14px 35px rgba(0,0,0,.22)}input,textarea,select{background:#0e1528!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:8px}input::placeholder,textarea::placeholder{color:#71809f}table{border-color:var(--border)!important}th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}img{max-width:100%}.badge,.tag,.label{border-radius:999px}@media(max-width:700px){body{overflow-x:hidden}}</style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        CloudFlow Dashboard
+    </div>
+
+    <div class="container">
+
+        <h1>Dashboard</h1>
+
+        <p class="description">
+            Overview of important business metrics
+        </p>
+
+        <div class="dashboard">
+
+            <div class="card">
+                <div class="icon">👥</div>
+                <h2>Total Users</h2>
+                <div class="value">12,540</div>
+                <div class="info">↑ 12.5% from last month</div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">💰</div>
+                <h2>Total Revenue</h2>
+                <div class="value">₹8.4L</div>
+                <div class="info">↑ 8.2% from last month</div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">📊</div>
+                <h2>Active Projects</h2>
+                <div class="value">486</div>
+                <div class="info">↑ 5.4% from last month</div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">🛒</div>
+                <h2>Total Orders</h2>
+                <div class="value">3,842</div>
+                <div class="info">↑ 9.7% from last month</div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">⭐</div>
+                <h2>Customer Rating</h2>
+                <div class="value">4.8/5</div>
+                <div class="info">↑ 2.1% improvement</div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 96%;"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">📈</div>
+                <h2>Conversion Rate</h2>
+                <div class="value">68.5%</div>
+                <div class="info">↑ 5.2% from last month</div>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 68%;"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

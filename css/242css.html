@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SaaS Documentation</title>
+
+<style>
+*{box-sizing:border-box;font-family:Arial}
+body{margin:0;color:#1f2937}
+header{
+ height:65px;border-bottom:1px solid #e5e7eb;
+ display:flex;align-items:center;padding:0 5%;
+ justify-content:space-between
+}
+header a{margin-left:20px;text-decoration:none;color:#64748b}
+.layout{
+ display:grid;grid-template-columns:240px 1fr 180px;
+ max-width:1200px;margin:auto
+}
+aside{padding:30px 20px;border-right:1px solid #e5e7eb}
+aside a{
+ display:block;text-decoration:none;color:#475569;
+ padding:9px;border-radius:5px;font-size:13px
+}
+aside a:hover{background:#eff6ff;color:#2563eb}
+article{padding:45px}
+article h1{font-size:38px;margin-bottom:15px}
+article h2{margin:35px 0 12px}
+article p,li{color:#64748b;line-height:1.7}
+pre{
+ background:#111827;color:#e5e7eb;
+ padding:20px;border-radius:8px;overflow:auto
+}
+.toc{padding:35px 10px}
+.toc a{display:block;color:#64748b;font-size:12px;margin:10px 0}
+@media(max-width:850px){
+ .layout{grid-template-columns:1fr}
+ aside,.toc{display:none}
+ article{padding:30px 6%}
+}
+</style>
+
+<style>
+:root{
+ --bg:#0b1020;
+ --panel:#11182b;
+ --panel2:#0e1528;
+ --text:#eef2ff;
+ --muted:#a8b3cf;
+ --accent:#7c5cff;
+ --accent2:#22d3ee;
+ --ok:#34d399;
+ --danger:#fb7185;
+ --border:#2a3655;
+}
+html{scroll-behavior:smooth}
+body{
+ background:linear-gradient(135deg,#080c18,#101a31)!important;
+ color:var(--text)!important;
+ font-family:Inter,Segoe UI,Arial,sans-serif!important;
+ line-height:1.6;
+}
+h1,h2,h3,h4,h5,h6{color:var(--text)}
+p,li,label,small{color:var(--muted)}
+a{color:var(--accent2);transition:.25s}
+a:hover{color:#fff}
+nav,.navbar,.top,header{
+ background:rgba(8,12,24,.94)!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ backdrop-filter:blur(10px);
+}
+.logo{
+ background:linear-gradient(90deg,var(--accent),var(--accent2));
+ -webkit-background-clip:text!important;
+ -webkit-text-fill-color:transparent!important;
+ color:var(--accent2);
+}
+button,.btn,.button,input[type="submit"],input[type="button"]{
+ border-radius:10px;
+ transition:transform .25s,box-shadow .25s,background .25s;
+}
+button:hover,.btn:hover,.button:hover,input[type="submit"]:hover,input[type="button"]:hover{
+ transform:translateY(-2px);
+}
+.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,
+.panel,.box,.content-box,.form-container,.contact-form,.profile-card,
+.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,
+.modal-content,.container-card,.plan,.table-container{
+ background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ box-shadow:0 14px 35px rgba(0,0,0,.22);
+}
+input,textarea,select{
+ background:#0e1528!important;
+ color:var(--text)!important;
+ border:1px solid var(--border)!important;
+ border-radius:8px;
+}
+input::placeholder,textarea::placeholder{color:#71809f}
+table{border-color:var(--border)!important}
+th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}
+td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}
+img{max-width:100%}
+.badge,.tag,.label{
+ border-radius:999px;
+}
+@media(max-width:700px){
+ body{overflow-x:hidden}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>CloudFlow Docs</h2>
+<nav>
+<a href="#">Guides</a>
+<a href="#">API</a>
+<a href="#">Support</a>
+</nav>
+</header>
+
+<div class="layout">
+
+<aside>
+<strong>Documentation</strong><br><br>
+<a href="#">Introduction</a>
+<a href="#">Getting Started</a>
+<a href="#">Authentication</a>
+<a href="#">API Reference</a>
+<a href="#">Webhooks</a>
+<a href="#">Integrations</a>
+</aside>
+
+<article>
+<h1>Getting Started</h1>
+
+<p>
+Learn how to get started with the CloudFlow platform
+and create your first project.
+</p>
+
+<h2>Installation</h2>
+<p>Include the SDK in your project:</p>
+
+<pre>npm install cloudflow-sdk</pre>
+
+<h2>Authentication</h2>
+<p>
+Use your API key to authenticate requests to the platform.
+</p>
+
+<h2>Next Steps</h2>
+<ul>
+<li>Create your first project.</li>
+<li>Configure authentication.</li>
+<li>Connect an integration.</li>
+</ul>
+</article>
+
+<div class="toc">
+<strong>On this page</strong>
+<a href="#">Installation</a>
+<a href="#">Authentication</a>
+<a href="#">Next Steps</a>
+</div>
+
+</div>
+
+</body>
+</html>

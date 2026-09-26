@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SaaS Documentation</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;color:#1e293b}
+.layout{display:flex;min-height:100vh}
+.sidebar{width:240px;background:#f8fafc;padding:25px;position:fixed;height:100vh;border-right:1px solid #e5e7eb}
+.sidebar a{display:block;text-decoration:none;color:#475569;padding:10px 0}
+.main{margin-left:240px;padding:45px;max-width:950px}
+.code{background:#111827;color:#e5e7eb;padding:18px;border-radius:8px;overflow:auto}
+.note{background:#eff6ff;border-left:4px solid #2563eb;padding:15px;margin:20px 0}
+@media(max-width:700px){
+.sidebar{width:100px;padding:15px}
+.sidebar h2{font-size:14px}
+.sidebar a{font-size:12px}
+.main{margin-left:100px;padding:25px}
+}
+</style>
+
+<style>
+:root{
+ --bg:#0b1020;
+ --panel:#11182b;
+ --panel2:#0e1528;
+ --text:#eef2ff;
+ --muted:#a8b3cf;
+ --accent:#7c5cff;
+ --accent2:#22d3ee;
+ --ok:#34d399;
+ --danger:#fb7185;
+ --border:#2a3655;
+}
+html{scroll-behavior:smooth}
+body{
+ background:linear-gradient(135deg,#080c18,#101a31)!important;
+ color:var(--text)!important;
+ font-family:Inter,Segoe UI,Arial,sans-serif!important;
+ line-height:1.6;
+}
+h1,h2,h3,h4,h5,h6{color:var(--text)}
+p,li,label,small{color:var(--muted)}
+a{color:var(--accent2);transition:.25s}
+a:hover{color:#fff}
+nav,.navbar,.top,header{
+ background:rgba(8,12,24,.94)!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ backdrop-filter:blur(10px);
+}
+.logo{
+ background:linear-gradient(90deg,var(--accent),var(--accent2));
+ -webkit-background-clip:text!important;
+ -webkit-text-fill-color:transparent!important;
+ color:var(--accent2);
+}
+button,.btn,.button,input[type="submit"],input[type="button"]{
+ border-radius:10px;
+ transition:transform .25s,box-shadow .25s,background .25s;
+}
+button:hover,.btn:hover,.button:hover,input[type="submit"]:hover,input[type="button"]:hover{
+ transform:translateY(-2px);
+}
+.card,.feature-card,.product-card,.pricing-card,.testimonial,.hero-image,
+.panel,.box,.content-box,.form-container,.contact-form,.profile-card,
+.saas-card,.dashboard-card,.stat-card,.service-card,.info-card,.review-card,
+.modal-content,.container-card,.plan,.table-container{
+ background:linear-gradient(145deg,rgba(17,24,43,.96),rgba(14,21,40,.96))!important;
+ color:var(--text)!important;
+ border-color:var(--border)!important;
+ box-shadow:0 14px 35px rgba(0,0,0,.22);
+}
+input,textarea,select{
+ background:#0e1528!important;
+ color:var(--text)!important;
+ border:1px solid var(--border)!important;
+ border-radius:8px;
+}
+input::placeholder,textarea::placeholder{color:#71809f}
+table{border-color:var(--border)!important}
+th{background:rgba(124,92,255,.18)!important;color:var(--text)!important}
+td{background:rgba(17,24,43,.8)!important;color:var(--muted)!important;border-color:var(--border)!important}
+img{max-width:100%}
+.badge,.tag,.label{
+ border-radius:999px;
+}
+@media(max-width:700px){
+ body{overflow-x:hidden}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<h2>CloudFlow Docs</h2>
+<a href="#">Introduction</a>
+<a href="#">Installation</a>
+<a href="#">Authentication</a>
+<a href="#">API Reference</a>
+<a href="#">Examples</a>
+</aside>
+<main class="main">
+<h1>Getting Started</h1>
+<p>Welcome to the CloudFlow documentation.</p>
+<div class="note">CloudFlow provides tools for analytics, automation, and team collaboration.</div>
+<h2>Installation</h2>
+<p>Follow these steps to start using the platform.</p>
+<div class="code">npm install cloudflow-sdk</div>
+<h2>Next Steps</h2>
+<p>Configure your workspace and create your first project.</p>
+</main>
+</div>
+</body>
+</html>
